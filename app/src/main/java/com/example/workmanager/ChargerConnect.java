@@ -20,7 +20,7 @@ public class ChargerConnect extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charger_connect);
-        btnSendBroadcast = (Button)findViewById(R.id.btnSendBroadcast); 
+        btnSendBroadcast = (Button)findViewById(R.id.btnSendBroadcast);  //not use this button
         mReceiver = new CustomReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
@@ -44,7 +44,7 @@ public class ChargerConnect extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        //this.unregisterReceiver(mReceiver2);
+        //this.unregisterReceiver(mReceiver2);  //no need this = becuase of manifest file declare
 
         //for custom broacast receiver
         //LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);

@@ -60,7 +60,7 @@ public class batteryChangeService extends Service {
             }
             else if (intent.getAction().equals(Intent.ACTION_POWER_DISCONNECTED)){
                 Toast.makeText(context, "Sanket ~ The device is not charging", Toast.LENGTH_SHORT).show();
-                //code for mediaplayer for music 
+                //code for mediaplayer for music
             }
             //not working this = usb connect - disconnect
             else if (intent.getAction().equals(Intent.ACTION_UMS_DISCONNECTED)) {
