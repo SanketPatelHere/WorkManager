@@ -22,7 +22,7 @@ public class BlurWorker extends Worker {
     public Result doWork() {
         try {
 
-
+        //not working
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
         builder.setSmallIcon(R.drawable.img_badminton);
         builder.setContentTitle("Notification Alert, Click Me!");

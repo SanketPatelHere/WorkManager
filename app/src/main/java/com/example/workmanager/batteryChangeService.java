@@ -18,29 +18,7 @@ import androidx.core.app.NotificationCompat;
 
 public class batteryChangeService extends Service {
 
-    private BroadcastReceiver mBatteryStateReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
 
-            if (intent.getAction().equals(Intent.ACTION_POWER_CONNECTED)) {
-                Toast.makeText(context, "Sanket ~ The device is charging", Toast.LENGTH_SHORT).show();
-
-            }
-            else if (intent.getAction().equals(Intent.ACTION_POWER_DISCONNECTED)){
-                Toast.makeText(context, "Sanket ~ The device is not charging", Toast.LENGTH_SHORT).show();
-            }
-            //not working this = usb connect - disconnect
-            else if (intent.getAction().equals(Intent.ACTION_UMS_DISCONNECTED)) {
-                Toast.makeText(context, "The ums is disconnected1", Toast.LENGTH_SHORT).show();
-            }
-
-            else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED))
-            {
-                Toast.makeText(context, "The usb is attached", Toast.LENGTH_SHORT).show();
-            }
-
-        }
-    };
 
 
     @Nullable
@@ -73,7 +51,28 @@ public class batteryChangeService extends Service {
         //stopForeground(true);
         return START_NOT_STICKY;
     }
+    private BroadcastReceiver mBatteryStateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
 
+            if (intent.getAction().equals(Intent.ACTION_POWER_CONNECTED)) {
+                Toast.makeText(context, "Sanket ~ The device is charging", Toast.LENGTH_SHORT).show();
+            }
+            else if (intent.getAction().equals(Intent.ACTION_POWER_DISCONNECTED)){
+                Toast.makeText(context, "Sanket ~ The device is not charging", Toast.LENGTH_SHORT).show();
+                //code for mediaplayer for music 
+            }
+            //not working this = usb connect - disconnect
+            else if (intent.getAction().equals(Intent.ACTION_UMS_DISCONNECTED)) {
+                Toast.makeText(context, "The ums is disconnected1", Toast.LENGTH_SHORT).show();
+            }
+
+            else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED))
+            {
+                Toast.makeText(context, "The usb is attached", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
     @Override
     public void onDestroy() {
         unregisterReceiver(mBatteryStateReceiver);
