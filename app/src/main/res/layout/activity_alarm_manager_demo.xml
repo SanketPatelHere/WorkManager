@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AlarmManagerDemo">
+    <ToggleButton
+        android:id="@+id/alarmToggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOff="Alarm off"
+        android:textSize="35sp"
+        android:textOn="Alarm on"/>
+    <TextView
+        android:id="@+id/tvCounter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:text="Coutner = "/>
+
+    <EditText
+        android:id="@+id/etAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Set time for alarm"
+        android:textSize="35sp"
+        />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Start"
+        android:textSize="35sp"
+        />
+</LinearLayout>

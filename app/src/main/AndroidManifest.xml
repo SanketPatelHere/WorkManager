@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChargerConnect"></activity>
+        <activity android:name=".AlarmManagerDemo"></activity>
+        <activity android:name=".ChargerConnect" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,21 +21,21 @@
 
         <receiver android:name=".CustomReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
-                    <action android:name="android.intent.action.ums_connected" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.intent.action.ums_connected" />
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
                 <action android:name="android.intent.action.UMS_DISCONNECTED" />
-
             </intent-filter>
-
-
+        </receiver>
+        <receiver android:name=".AlarmReceiver">
 
         </receiver>
+
         <service
-            android:enabled="true"
             android:name=".batteryChangeService"
-            android:exported="true"/>
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

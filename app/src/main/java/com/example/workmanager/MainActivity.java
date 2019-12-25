@@ -13,13 +13,14 @@ import androidx.work.WorkManager;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn1, btn2;
+    Button btn1, btn2, btn3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn1 = (Button)findViewById(R.id.btn1);
         btn2 = (Button)findViewById(R.id.btn2);
+        btn3 = (Button)findViewById(R.id.btn3);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ChargerConnect.class);
+                startActivity(i);
+                //Toast.makeText(MainActivity.this, "btn2", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AlarmManagerDemo.class);
                 startActivity(i);
                 //Toast.makeText(MainActivity.this, "btn2", Toast.LENGTH_SHORT).show();
             }

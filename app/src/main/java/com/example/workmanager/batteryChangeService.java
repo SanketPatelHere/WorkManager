@@ -73,16 +73,13 @@ public class batteryChangeService extends Service {
             }
         }
     };
-    @Override
-    public void onDestroy() {
-        unregisterReceiver(mBatteryStateReceiver);
-    }
 
     public Notification sendNotification(String title, String message) {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
-//If on Oreo then notification required a notification channel.
+//If on Oreo then notification required a notification channel. = 8.0 = oreo
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            //id, name, importance
             NotificationChannel channel = new NotificationChannel("default", "Default", NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
         }
@@ -94,5 +91,10 @@ public class batteryChangeService extends Service {
 
         //notificationManager.notify(1, notification.build());
         return notification.build();
+    }
+
+    @Override
+    public void onDestroy() {
+        unregisterReceiver(mBatteryStateReceiver);
     }
 }
