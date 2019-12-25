@@ -20,7 +20,7 @@
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Charger Broadcast Recevier"
+        android:text="Charger - Service - background"
         android:layout_margin="10dp"
         android:textSize="25sp"
         android:background="#ddcccc"/>
@@ -29,8 +29,25 @@
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alarm Manager"
+        android:text="Alarm Manager-receiver"
         android:layout_margin="10dp"
         android:textSize="25sp"
-        android:background="#ddcccc"/>
+        android:background="#ccddcc"/>
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Job Schedular"
+        android:layout_margin="10dp"
+        android:textSize="25sp"
+        android:background="#ccccdd"/>
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shared Preference"
+        android:layout_margin="10dp"
+        android:textSize="25sp"
+        android:background="#dddddd"/>
 </LinearLayout>
